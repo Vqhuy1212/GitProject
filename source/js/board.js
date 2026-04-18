@@ -1,7 +1,8 @@
 export default class Board {
-    constructor(size) {
+    constructor(size, onCellClick) {
         this.size = size;
         this.element = document.getElementById("board");
+        this.onCellClick = onCellClick; //callback từ game
     }
 
     render() {
@@ -13,8 +14,14 @@ export default class Board {
             for (let j = 0; j < this.size; j++) {
                 let cell = document.createElement("td");
 
+                cell.classList.add("cell"); // để style
                 cell.dataset.row = i;
                 cell.dataset.col = j;
+
+                // 👇 click
+                cell.addEventListener("click", () => {
+                    this.onCellClick(cell, i, j);
+                });
 
                 row.appendChild(cell);
             }
