@@ -1,8 +1,9 @@
 .title {
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
+    font-weight: 1000;
     margin: 0;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     line-height: 1;
     font-weight: bold;
 }
@@ -21,7 +22,7 @@
 
 @keyframes wave {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-2px); }
+    50% { transform: translateY(-5px); }
 }
 
 table {
@@ -39,14 +40,40 @@ td {
     border: 2px solid black;
 }
 
-.X {
-    color: red;
-    text-shadow: 0 0 5px rgba(255,0,0,0.5);
+.X, .O {
+
 }
 
-.O {
-    color: blue;
-    text-shadow: 0 0 5px rgba(0,0,255,0.5);
+.X::before,
+.X::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 5px;
+    background: #d32f2f;
+    top: 50%;
+    left: 50%;
+    border-radius: 2px;
+}
+
+.X::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.X::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.O::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: 5px solid #1976d2;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .cell {
@@ -54,6 +81,7 @@ td {
     font-size: 20px;
     font-weight: bold;
     transition: 0.2s;
+    position: relative;
 }
 
 .cell:hover {
@@ -71,5 +99,4 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    gap: 3px;
 }

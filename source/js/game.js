@@ -13,14 +13,13 @@ export default class Game {
     }
 
     handleCellClick(cell, i, j) {
-            // ❌ nếu ô đã có rồi thì không cho đánh
-            if (cell.textContent !== "") return;
+            // Nếu ô đã có rồi thì không cho đánh
+            if (cell.classList.contains("X") || cell.classList.contains("O")) return;
 
             // ✅ đặt X hoặc O
-            cell.textContent = this.currentPlayer;
             cell.classList.add(this.currentPlayer);
 
-            // 🔄 đổi lượt
+            // 🔄 đổi lượt: X -> O, O -> X
             this.currentPlayer = this.currentPlayer === "X" ? "O" : "X";
-        }
+    }
 }
