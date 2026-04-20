@@ -6,7 +6,26 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="container">
+
+<!--MENU-->
+<div id="menu-screen" class="screen">
+    <div class="menu-card">
+        <h1 class="title">
+            <span>C</span>
+            <span>a</span>
+            <span>r</span>
+            <span>o</span>
+        </h1>
+
+        <div class="menu-buttons">
+            <button id="pvp-btn" class="btn pvp">2 Players</button>
+            <button id="ai-btn" class="btn ai">Play vs AI</button>
+        </div>
+    </div>
+</div>
+
+<!--GAME-->
+<div id="game-screen" class="screen" style="display: none;">
     <h1 class="title">
         <span>C</span>
         <span>a</span>
@@ -14,8 +33,12 @@
         <span>o</span>
     </h1>
 
+    <div class="game-container">
+    <button id="back-btn" class="btn back">← Back</button>
     <table id="board"></table>
+    </div>
 </div>
+
 <script type="module" src="js/main.js"></script>
 </body>
 </html>
