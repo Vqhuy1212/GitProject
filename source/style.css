@@ -220,3 +220,61 @@ body {
 .restart:hover {
     background-color: #2e7d32;
 }
+
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5); /* nền mờ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px 50px;
+    border-radius: 15px;
+    text-align: center;
+    border: 4px solid black;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+
+    transition: 0.2s;
+}
+
+.popup-close:hover {
+    color: #000;
+    transform: scale(1.2);
+}
+
+.win {
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: orange;
+    }
+}

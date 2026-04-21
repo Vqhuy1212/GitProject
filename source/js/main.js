@@ -5,16 +5,14 @@ import Screen from './ui/screen.js';
 const screen = new Screen();
 
 let game = null;
+let currentMode = null;
 
 // MENU
 const menu = new Menu((mode) => {
-    // chuyển màn hình
+    currentMode = mode;
+
     screen.showGame();
-
-    // tạo game mới
-    game = new Game(10);
-
-    console.log("Mode:", mode);
+    game = new Game(10, mode);
 });
 
 // BACK BUTTON
@@ -26,18 +24,28 @@ backBtn.addEventListener("click", () => {
 
     // reset game
     game = null;
-
-    // xoá bàn cờ (tránh giữ trạng thái cũ)
-    document.getElementById("board").innerHTML = "";
 });
 
 // RESTART BUTTON
 const restartBtn = document.getElementById("restart-btn");
 
 restartBtn.addEventListener("click", () => {
-    // xoá bàn cờ cũ
-    document.getElementById("board").innerHTML = "";
+    if (game) game.restart();
+});
 
-    // tạo lại game mới
-    game = new Game(10);
+// ===== POPUP =====
+const popup = document.getElementById("popup");
+const popupRestart = document.getElementById("popup-restart");
+const popupClose = document.getElementById("popup-close");
+
+// PLAY AGIAN BUTTON
+popupRestart.addEventListener("click", () => {
+    popup.style.display = "none";
+
+    if (game) game.restart(); // 🔥 reset đúng chuẩn OOP
+});
+
+// CLOSE BUTTON
+popupClose.addEventListener("click", () => {
+    popup.style.display = "none";
 });
