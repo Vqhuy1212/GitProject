@@ -30,3 +30,14 @@ backBtn.addEventListener("click", () => {
     // xoá bàn cờ (tránh giữ trạng thái cũ)
     document.getElementById("board").innerHTML = "";
 });
+
+// RESTART BUTTON
+const restartBtn = document.getElementById("restart-btn");
+
+restartBtn.addEventListener("click", () => {
+    // xoá bàn cờ cũ
+    document.getElementById("board").innerHTML = "";
+
+    // tạo lại game mới
+    game = new Game(10);
+});
