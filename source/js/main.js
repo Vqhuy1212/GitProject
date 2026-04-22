@@ -33,7 +33,7 @@ restartBtn.addEventListener("click", () => {
     if (game) game.restart();
 });
 
-// ===== POPUP =====
+// POPUP
 const popup = document.getElementById("popup");
 const popupRestart = document.getElementById("popup-restart");
 const popupClose = document.getElementById("popup-close");
@@ -42,7 +42,7 @@ const popupClose = document.getElementById("popup-close");
 popupRestart.addEventListener("click", () => {
     popup.style.display = "none";
 
-    if (game) game.restart(); // 🔥 reset đúng chuẩn OOP
+    if (game) game.restart();
 });
 
 // CLOSE BUTTON

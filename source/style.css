@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #bbdefb, #90caf9);
+}
+
 .title {
     text-align: center;
     font-size: 70px;
@@ -85,11 +90,6 @@ td {
 
 .cell:hover {
     background-color: #ddd;
-}
-
-body {
-    margin: 0;
-    background: linear-gradient(to bottom, #bbdefb, #90caf9);
 }
 
 .screen {
