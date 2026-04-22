@@ -7,8 +7,6 @@ export default class Game {
 
         this.initPopup();
 
-        this.isAiTurn = false;
-
         this.currentPlayer = "X";
         this.isGameOver = false;
 
@@ -47,9 +45,6 @@ export default class Game {
 
         // ❌ ô đã có rồi
         if (this.data[i][j] !== null) return;
-
-        // Không được đánh khi AI đánh
-        if (this.isAiTurn) return;
 
         // ✅ lưu vào data
         this.data[i][j] = this.currentPlayer;
@@ -232,7 +227,5 @@ export default class Game {
         const cell = document.querySelectorAll("#board td")[i * this.size + j];
 
         this.handleCellClick(cell, i, j, true);
-
-        this.isAiTurn = false;
     }
 }

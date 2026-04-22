@@ -32,20 +32,3 @@ const restartBtn = document.getElementById("restart-btn");
 restartBtn.addEventListener("click", () => {
     if (game) game.restart();
 });
-
-// POPUP
-const popup = document.getElementById("popup");
-const popupRestart = document.getElementById("popup-restart");
-const popupClose = document.getElementById("popup-close");
-
-// PLAY AGIAN BUTTON
-popupRestart.addEventListener("click", () => {
-    popup.style.display = "none";
-
-    if (game) game.restart();
-});
-
-// CLOSE BUTTON
-popupClose.addEventListener("click", () => {
-    popup.style.display = "none";
-});

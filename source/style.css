@@ -174,9 +174,8 @@ td {
 }
 
 .player-turn {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    transform: none;
 
     font-size: 20px;
     font-weight: bold;
